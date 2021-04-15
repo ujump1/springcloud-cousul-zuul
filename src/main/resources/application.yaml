@@ -21,7 +21,12 @@ server:
 
 zuul:
   routes:
-    api:
-      path: /api-gateway/**
+    #配置多个服务
+    producer:
+      path: /api-gateway/producer/**
       #使用服务名来
       serviceId: spring-cloud-consul-producer
+    cousumer:
+      path: /api-gateway/consumer/**
+        #使用服务名来
+      serviceId: spring-cloud-consul-consumer
